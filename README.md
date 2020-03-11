@@ -1,7 +1,10 @@
 # dotnet core scheduled task on Cloud Foundry.
 
-The following is an example of running a .NET core app as a job rather than a
-long running task on Cloud Foundry.
+The following is an example of running a .NET core console app as a job rather than a
+long running task on the Pivotal Platform.
+
+To use this demo you must have met the [Prerequisites](https://docs.pivotal.io/scheduler/1-2/using.html#prereqs) and your Pivotal Platform must have the `dotnet_core_buildpack` Buildpack available.
+
 
 ```
 ## Build a deployable artifact
