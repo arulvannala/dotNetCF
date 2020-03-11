@@ -1,4 +1,4 @@
-# dotnet core scheduled task on Cloud Foundry.
+# .NET core console app via Pivotal Scheduler.
 
 The following is an example of running a .NET core console app as a job rather than a
 long running task on the Pivotal Platform.
