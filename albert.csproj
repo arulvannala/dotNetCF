@@ -1,26 +1,8 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
-    <DebugType>portable</DebugType>
-    <AssemblyName>albert</AssemblyName>
     <OutputType>Exe</OutputType>
-    <RuntimeFrameworkVersion>2.0.*</RuntimeFrameworkVersion>
+    <TargetFramework>netcoreapp2.2.7</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Server.IISIntegration">
-      <Version>*</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.AspNetCore.Server.Kestrel">
-      <Version>*</Version>
-    </PackageReference>
-    <PackageReference Include="Microsoft.Extensions.Configuration.CommandLine">
-      <Version>*</Version>
-    </PackageReference>
-  </ItemGroup>
-
-  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-    <DefineConstants>$(DefineConstants);RELEASE</DefineConstants>
-  </PropertyGroup>
 </Project>

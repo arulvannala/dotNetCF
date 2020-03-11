@@ -6,9 +6,9 @@ applications:
   memory: 1G
   disk_quota: 2G
   path: packages
-  health-check-type: none
+  health-check-type: process
   buildpacks:
     - dotnet_core_buildpack
-  command: "exec dotnet ./albert"
+  command: "exec dotnet ./albert.dll"
   env:
     DOTNET_CLI_TELEMETRY_OPTOUT: 1

@@ -1,12 +1,12 @@
-using System;
+﻿using System;
 
-namespace console_app
+namespace albert
 {
-    public class Program
+    class Program
     {
-        public static void Main(string[] args)
+        static void Main(string[] args)
         {
-		Console.WriteLine("Hello World!");
+            Console.WriteLine("Hello World!");
         }
     }
 }

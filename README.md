@@ -10,7 +10,7 @@ To use this demo you must have met these [Prerequisites](https://docs.pivotal.io
 
 ```
 ## Build a deployable artifact
-dotnet publish -r linux-x64 -o packages/ --self-contained
+dotnet publish -o packages/
 
 ## create a task scheduler instance in your space
 cf marketplace -s scheduler-for-pcf # pick a plan
@@ -21,7 +21,7 @@ cf push albert
 cf bind-service albert albertScheduler
 
 ## Create a job definition and test it manually
-cf create-job albert albert-job "exec ./albert"
+cf create-job albert albert-job "exec dotnet ./albert.dll"
 cf jobs
 cf run-job albert-job
 cf job-history albert-job
