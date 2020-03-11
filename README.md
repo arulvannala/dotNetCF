@@ -3,6 +3,8 @@
 The following is an example of running a .NET core console app as a job rather than a
 long running task on the Pivotal Platform.
 
+*Note:* This will scale down to zero containers between each job run.
+
 To use this demo you must have met these [Prerequisites](https://docs.pivotal.io/scheduler/1-2/using.html#prereqs) and your Pivotal Platform must have the `dotnet_core_buildpack` Buildpack available.
 
 
@@ -33,3 +35,17 @@ cf logs albert
 cf logs albert --recent
 ```
 
+
+Logs of a job run:
+
+```
+2020-03-10T18:50:00.39-0700 [CELL/0] OUT Cell 31411d2b-8040-44d6-86e5-07f30b7a34a9 creating container for instance ec0e0647-c03d-406d-8fd0-ef572541508c
+2020-03-10T18:50:00.92-0700 [CELL/0] OUT Cell 31411d2b-8040-44d6-86e5-07f30b7a34a9 successfully created container for instance ec0e0647-c03d-406d-8fd0-ef572541508c
+
+2020-03-10T18:50:02.75-0700 [APP/TASK/43963add-41a3-483e-91ab-5b11e46d831c-|-43f22757-1a87-4c69-b782-db0581f6be33/0] OUT Hello World!
+2020-03-10T18:50:02.75-0700 [APP/TASK/43963add-41a3-483e-91ab-5b11e46d831c-|-43f22757-1a87-4c69-b782-db0581f6be33/0] OUT Exit status 0
+
+2020-03-10T18:50:02.95-0700 [CELL/0] OUT Cell 31411d2b-8040-44d6-86e5-07f30b7a34a9 stopping instance ec0e0647-c03d-406d-8fd0-ef572541508c
+2020-03-10T18:50:02.95-0700 [CELL/0] OUT Cell 31411d2b-8040-44d6-86e5-07f30b7a34a9 destroying container for instance ec0e0647-c03d-406d-8fd0-ef572541508c
+2020-03-10T18:50:04.10-0700 [CELL/0] OUT Cell 31411d2b-8040-44d6-86e5-07f30b7a34a9 successfully destroyed container for instance ec0e0647-c03d-406d-8fd0-ef572541508c
+```
